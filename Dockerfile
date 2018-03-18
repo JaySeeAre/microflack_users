@@ -6,6 +6,7 @@ ENV SERVICE_VERSION $SERVICE_VERSION
 RUN mkdir /app
 COPY . /app
 RUN touch /app/.env
+RUN pip install --upgrade pip
 RUN pip install --find-links /app/wheels -r /app/requirements.txt
 RUN pip install pymysql gunicorn
 WORKDIR /app
